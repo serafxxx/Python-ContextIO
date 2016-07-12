@@ -67,8 +67,9 @@ class Folder(BaseResource):
         status = self._request_uri(method="PUT", params=params)
         return bool(status["success"])
 
-    def post(self):
-        logging.info("This method is not implemented")
+    def post(self, **params):
+        """ Create new folder """
+        return super(Folder, self).post(uri=self.base_uri, params=params)
 
     def delete(self):
         """Remove a given folder.

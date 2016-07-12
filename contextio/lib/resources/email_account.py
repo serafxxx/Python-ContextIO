@@ -27,3 +27,12 @@ class EmailAccount(BaseResource):
 
     def get_connect_tokens(self):
         return [ConnectToken(self, obj) for obj in self._request_uri("connect_tokens")]
+
+    def create(self, **kwargs):
+        all_args = [
+            "type", "use_ssl", "server", "label", "username", "port", "password", "email"
+        ]
+        self.base_uri = 'email_accounts'
+        return super(EmailAccount, self).post(params=kwargs, all_args=all_args, return_bool=False)
+
+

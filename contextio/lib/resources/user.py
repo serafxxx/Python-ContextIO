@@ -25,6 +25,13 @@ class User(BaseResource):
 
         return super(User, self).post(params=kwargs, all_args=all_args)
 
+    def create(self, **kwargs):
+        all_args = [
+            "last_name", "first_name", "type", "use_ssl", "server", "label", "username", "port", "password", "email"
+        ]
+        self.base_uri = 'users'
+        return super(User, self).post(params=kwargs, all_args=all_args, return_bool=False)
+
     def delete(self):
         return super(User, self).delete()
 
