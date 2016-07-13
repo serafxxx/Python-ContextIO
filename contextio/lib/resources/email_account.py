@@ -13,7 +13,7 @@ class EmailAccount(BaseResource):
         super(EmailAccount, self).__init__(parent, 'email_accounts/{label}', definition)
 
     def post(self, **kwargs):
-        all_args = ["delimiter"]
+        all_args = ["delimiter", "password"]
 
         for prop in all_args:
             value = kwargs.get(prop)
