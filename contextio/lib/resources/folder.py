@@ -19,7 +19,7 @@ class Folder(BaseResource):
     resource_id = "name"
     keys = {
         "2.0": ["name", "attributes", "delim", "nb_messages", "nb_unseen_messages"],
-        "lite": ["name", "attributes", "delimiter", "nb_messages", "nb_unseen_messages"]
+        "lite": ["name", "attributes", "delimiter", "nb_messages", "nb_unseen_messages", 'symbolic_name']
     }
 
 
